@@ -1,0 +1,52 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Or8Way.hdl
+
+/**
+ * 8-way Or: 
+ * out = (in[0] or in[1] or ... or in[7])
+ */
+
+CHIP Or8Way {
+    IN in[8];
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    Not(in=in[0], out=aOut0);
+    Not(in=in[1], out=bOut0);
+    And(a=aOut0, b=bOut0, out=andOut0);
+    Not(in=andOut0, out=out0);
+
+    Not(in=out0, out=aOut1);
+    Not(in=in[2], out=bOut1);
+    And(a=aOut1, b=bOut1, out=andOut1);
+    Not(in=andOut1, out=out1);
+
+    Not(in=out1, out=aOut2);
+    Not(in=in[3], out=bOut2);
+    And(a=aOut2, b=bOut2, out=andOut2);
+    Not(in=andOut2, out=out2);
+
+    Not(in=out2, out=aOut3);
+    Not(in=in[4], out=bOut3);
+    And(a=aOut3, b=bOut3, out=andOut3);
+    Not(in=andOut3, out=out3);
+
+
+    Not(in=out3, out=aOut4);
+    Not(in=in[5], out=bOut4);
+    And(a=aOut4, b=bOut4, out=andOut4);
+    Not(in=andOut4, out=out4);
+
+    Not(in=out4, out=aOut5);
+    Not(in=in[6], out=bOut5);
+    And(a=aOut5, b=bOut5, out=andOut5);
+    Not(in=andOut5, out=out5);
+
+    Not(in=out5, out=aOut6);
+    Not(in=in[7], out=bOut6);
+    And(a=aOut6, b=bOut6, out=andOut6);
+    Not(in=andOut6, out=out);
+}
